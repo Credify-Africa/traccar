@@ -32,4 +32,4 @@ EXPOSE 8082 5000-5150
 ENV JAVA_OPTS="-Xms512m -Xmx2048m"
 
 # Run the application
-CMD ["java", "-jar", "tracker-server.jar", "debug.xml"] 
+CMD ["java", "-jar", "target/tracker-server.jar", "debug.xml"] 
