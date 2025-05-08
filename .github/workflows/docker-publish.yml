@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/traccar
+  IMAGE_NAME: credify-africa/traccar
 
 jobs:
   build-and-push:
