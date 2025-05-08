@@ -13,9 +13,8 @@ FROM openjdk:17-slim
 
 WORKDIR /app
 
-# Copy the built server JAR and dependencies
-COPY --from=build /app/target/tracker-server.jar /app/
-COPY --from=build /app/target/lib /app/lib
+# Copy everything from the build stage
+COPY --from=build /app /app
 
 # Copy the built web interface
 COPY --from=web-build /app/build /app/traccar-web/build
@@ -23,7 +22,7 @@ COPY --from=web-build /app/build /app/traccar-web/build
 # Copy configuration
 COPY debug.xml /app/debug.xml
 
-# Create media directory
+# Create necessary directories
 RUN mkdir -p /app/media
 
 # Expose the default Traccar ports
