@@ -21,7 +21,10 @@ COPY --from=build /app/target/lib /app/lib
 COPY --from=web-build /app/build /app/traccar-web/build
 
 # Copy configuration
-COPY debug.xml /app/
+COPY debug.xml /app/debug.xml
+
+# Create media directory
+RUN mkdir -p /app/media
 
 # Expose the default Traccar ports
 EXPOSE 8082 5000-5150
