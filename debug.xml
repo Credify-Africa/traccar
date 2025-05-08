@@ -17,7 +17,7 @@
     <entry key='mail.debug'>true</entry>
 
     <entry key='database.driver'>org.postgresql.Driver</entry>
-    <entry key='database.url'>jdbc:postgresql://host.docker.internal:5432/credifytraccar</entry>
+    <entry key='database.url'>jdbc:postgresql://localhost:5432/credifytraccar</entry>
     <entry key='database.user'>postgres</entry>
     <entry key='database.password'>stuart</entry>
 
