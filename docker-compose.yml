@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  traccar:
+    build: .
+    container_name: traccar
+    ports:
+      - "8082:8082"  # Web interface
+      - "5000-5150:5000-5150"  # Device communication ports
+    volumes:
+      - ./media:/app/media  # For storing media files
+    environment:
+      - JAVA_OPTS=-Xms512m -Xmx2048m
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # This allows the container to access the host machine
+    restart: unless-stopped 
